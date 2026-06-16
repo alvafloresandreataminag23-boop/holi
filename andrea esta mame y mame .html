@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Sabbath - Master of Reality Panel</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #a3a3a3;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            min-height: 100vh;
+            display: block;
+        }
+
+        .main-header {
+            background-color: #121212;
+            border-bottom: 2px solid #a855f7;
+            padding: 25px 20px;
+            text-align: left;
+        }
+
+        .logo-container {
+            display: block;
+            text-align: left;
+        }
+
+        .band-logo {
+            width: 40px;
+            height: 40px;
+            background-color: #a855f7;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+            box-shadow: 0 0 10px #a855f7;
+        }
+
+        .main-header h1 {
+            color: #ffffff;
+            font-size: 22pt;
+            letter-spacing: 3px;
+            display: inline-block;
+            vertical-align: middle;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px #a855f7;
+        }
+
+        .nav-tabs {
+            text-align: left;
+            margin-top: 15px;
+            background-color: #171717;
+            padding-left: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #737373;
+            padding: 12px 20px;
+            font-size: 9pt;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .tab-btn:hover {
+            color: #a855f7;
+        }
+
+        .tab-btn.active {
+            color: #ffffff;
+            background-color: #a855f7;
+        }
+
+        .content-container {
+            width: 100%;
+            padding: 40px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .project-panel {
+            background-color: #121212;
+            border: 1px solid #262626;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: left;
+            border-left: 5px solid #a855f7;
+        }
+
+        .panel-title {
+            color: #ffffff;
+            font-size: 14pt;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .screen-frame {
+            background-color: #1c1c1c;
+            padding: 6px;
+            border: 1px solid #404040;
+            margin-bottom: 12px;
+        }
+
+        .image-aspect-ratio {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        .project-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* TAMAÑO EXTRA PEQUEÑO (FOTO 1) */
+        .size-mini {
+            width: 250px;
+        }
+
+        /* TAMAÑO MEDIANO (VIDEO) */
+        .size-medium {
+            width: 550px;
+        }
+
+        /* TAMAÑO GIGANTE (FOTO 2) */
+        .size-giant {
+            width: 850px;
+            max-width: 100%;
+        }
+
+        .video-section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .video-title {
+            color: #a855f7;
+            font-size: 11pt;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .video-frame {
+            background-color: #000000;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 2px solid #a855f7;
+        }
+
+        .main-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .file-name {
+            color: #525252;
+            font-size: 8pt;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+        }
+
+        .button-group {
+            text-align: left;
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            font-size: 8pt;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+
+        .action-btn.primary {
+            background-color: #a855f7;
+            color: #ffffff;
+        }
+
+        .action-btn.primary:hover {
+            background-color: #c084fc;
+        }
+
+        .action-btn.secondary {
+            background-color: #262626;
+            color: #a3a3a3;
+            border: 1px solid #404040;
+        }
+
+        .action-btn.secondary:hover {
+            background-color: #404040;
+            color: #ffffff;
+        }
+
+        .main-footer {
+            background-color: #121212;
+            text-align: left;
+            padding: 25px;
+            font-size: 8pt;
+            color: #525252;
+            border-top: 1px solid #262626;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="band-logo"></div>
+            <h1>BLACK SABBATH ARCHIVE</h1>
+        </div>
+        <nav class="nav-tabs">
+            <div class="tab-btn active">HISTORIA</div>
+            <div class="tab-btn">DISCOGRAFÍA</div>
+            <div class="tab-btn">INTEGRANTES</div>
+            <div class="tab-btn">CONCIERTOS</div>
+        </nav>
+    </header>
+
+    <div class="content-container">
+
+        <!-- 1. PRIMERA IMAGEN: MUCHO MÁS PEQUEÑA -->
+        <div class="project-panel size-mini">
+            <h2 class="panel-title">1970 Era</h2>
+            <div class="screen-frame">
+                <div class="image-aspect-ratio">
+                    <img src="proyecto_pokemon_nuevo1.png" alt="Black Sabbath Mini" class="project-image" id="img-proyect1">
+                </div>
+            </div>
+            <p class="file-name">early_days_ozzy.psd</p>
+            <div class="button-group">
+                <div class="action-btn primary" onclick="alert('Cargando archivo de la era clásica...')">INFO</div>
+            </div>
+        </div>
+
+        <!-- 2. SEGUNDA IMAGEN: MUCHO MÁS GRANDE -->
+        <div class="project-panel size-giant">
+            <h2 class="panel-title">Master of Reality Artwork</h2>
+            <div class="screen-frame">
+                <div class="image-aspect-ratio">
+                    <img src="proyecto_pokemon_nuevo2.png" alt="Black Sabbath Giant" class="project-image" id="img-proyect2">
+                </div>
+            </div>
+            <p class="file-name">album_cover_highres.psd</p>
+            <div class="button-group">
+                <div class="action-btn primary" onclick="alert('Abriendo galería de arte en alta resolución...')">VER COMPLETO</div>
+                <div class="action-btn secondary" onclick="alert('Descargando créditos del álbum...')">CRÉDITOS</div>
+            </div>
+        </div>
+
+        <!-- 3. VIDEO: TAMAÑO MEDIANO -->
+        <section class="video-section size-medium">
+            <div class="video-wrapper">
+                <h2 class="video-title">▶ LIVE SESSIONS / PARANOID VIDEO</h2>
+                <div class="video-frame">
+                    <video controls autoplay muted loop class="main-video" id="pokedex-video">
+                        <source src="video_blender.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>HEAVY METAL ARCHIVE © 2026 | VERTIGO RECORDS RECORDING</p>
+    </footer>
+
+</body>
+</html>
